@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
 		<title>Charmar Pharmacy</title>
 		<meta name="description" content="Charmar Pharmacy, Pehlam Parkway's neighborhood friendly drugstore."></meta>
 		<link rel="stylesheet" type="text/css" href="static/css/main.css">
@@ -12,16 +13,32 @@
 		<header>
 			<div id="top">
 				<div id="logo">
-					<p>Charmar Pharmacy</p>
+					<div id="brand">
+						<img id ="brand" src="media/img/logo.png">
+					</div>
+					<div id="contact">
+						<p>Reach us at 4848-2884-4884 </p>
+						<p>Located at 100 lydig ave, Bronx</p>
+						<p>We speak Spanish, Russian, and Albanian!</p>
+					</div>
 				</div>
-				<nav>
+				<nav id="main">
 					<ul>
 						<li><a href="#services">Services</a></li>
 						<li><a href="#pharmacists">Pharmacists</a></li>
 						<li><a href="#about">About us</a></li>
 					</ul>
-				</nav>	
-				<div id="contact"></div>
+				</nav>
+				<nav id="hidden">
+					<ul>
+						<li class="dropbutton"> Menu </li>
+					</ul>
+					<div class="drop-content" id="myDropDown">
+						<a href="#services"> Services </a>
+						<a href="#pharmacists"> Pharmacists </a>
+						<a href="#about"> About us </a>
+					</div>
+				</nav>
 			</div>
 			<div id="banner">
 				<p> Your neighborhood's friendly drugstore </p>
@@ -33,10 +50,75 @@
 		</header>
 		<main>
 			<div id="services">
-				<p> Our Services </p>
+				<h2>Our Services</h2>
+				<h3>Specializing in HIV/AIDS, Infertility, Diabetes, and other Major Diseases</h3>
+				<hr>
+				<div id="leftcol">
+					<img src="media/img/dollar.png">
+					<div class="container">
+						<ul>
+							<li>Fax Service</li>
+							<li>Notary Public</li>
+							<li>5&#162; Copies</li>
+							<li>Money Orders</li>
+							<li>Bill Payments</li>
+						</ul>
+					</div>
+				</div>
+				<div id="middlecol">
+					<img src="media/img/pill.png">
+					<div class="container">
+						<ul>
+							<li>Vitamins</li>
+							<li>Breast Pump Rentals and Sales</li>
+							<li>Medication Flavoring</li>
+							<li>Free Blood Pressure Testing</li>
+							<li>Special Order Medication</li>
+						</ul>
+					</div>
+				</div>
+
+				<div id="rightcol">
+					<img src="media/img/insurance.png">
+					<div class="container">
+						<ul>
+							<li>Mace</li>
+							<li>Free Area Delivery</li>
+							<li>Most Insurance Plans Accepted</li>
+							<li>CVS Caremark Compounding</li>
+							<li>Western Union Money Transfers</li>
+						</ul>
+					</div>
+				</div>
 			</div>
-			<div id="pharmacists"></div>
-			<div id="about"></div>
+			<div id="pharmacists">
+				<h2>Our pharmacists</h2>
+				<hr>
+				<div id = "left">
+					<img src="media/img/stock1.jpg">
+					<p> Jane Doe </p>
+				</div>
+				<div id = "right">
+					<img src="media/img/stock2.jpg">
+					<p> John Smith </p>
+				</div>
+			</div>
+			<div id="about">
+				<h2>About us</h2>
+				<hr>
+				<div id="map">
+					<div class="mapouter">
+						<div class="gmap_canvas">
+							<iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=charmar%20pharmacy&t=&z=17&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+						</div>
+					</div>
+				</div>
+				<div id="pharmacy_details">
+					<h3> Details</h3>
+					<p> lefjjjfjfjjfjfjfjfjfffff</p>
+					<p> hfuiu49uifiunfnfffff</p>
+				</div>
+			</div>
 		</main>
 		<footer><p>&copy; Rubaiyat Rashid 2018</p></footer>
 	</body>
