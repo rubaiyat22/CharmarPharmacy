@@ -5,12 +5,12 @@ $(document).ready(function(){
 	        1300);
     });
 
-    $('.dropbutton').click(function () {
+    $('#dropbutton').click(function () {
         document.getElementById("myDropDown").classList.toggle("show");
     });
 
     window.onclick = function(e) {
-        if (!e.target.matches('.dropbutton')) {
+        if (!e.target.matches('#dropbutton')) {
             var myDropdown = document.getElementById("myDropDown");
             if (myDropdown.classList.contains('show')) {
                 myDropdown.classList.remove('show');
