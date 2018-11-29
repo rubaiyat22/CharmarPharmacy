@@ -5,12 +5,49 @@ html,body{
 	top: 0px;
 	padding: 0px;
 	font-family: 'Roboto', sans-serif;
-	font-size: 0.97em;
 	color: #333;
+    animation: fadein 2s;
+    -moz-animation: fadein 2s; /* Firefox */
+    -webkit-animation: fadein 2s; /* Safari and Chrome */
+    -o-animation: fadein 2s; /* Opera */
 }
 
+@keyframes fadein{
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-moz-keyframes fadein { /* Firefox */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-webkit-keyframes opacity{ /* Safari and Chrome */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-o-keyframes fadein { /* Opera */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity: 1;
+    }
+}
 header{
 	position: relative;
+	color: #fff;
+	background-color: #6F8DC6;
 }
 
 #logo {
@@ -29,12 +66,17 @@ header{
 #logo img{
 	float: left;
 	min-height: 90%;
+	margin-left: 2%;
 }
 
 #contact{
 	display: block;
 	width: 50%;
 	float: left;
+	text-align: right;
+}
+#contact p {
+	padding-right: 10%;
 }
 
 #banner {
@@ -46,7 +88,24 @@ header{
 	display: block;
 	float: left;
 	width: 100%;
-	padding: 10% 0;
+	position: relative;
+}
+
+#carousel {
+	height: 13em;
+}
+
+.banner_img {
+	width: 100%;
+}
+
+#banner_text {
+	width: 100%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: rgba(0, 0, 0, .64);
 }
 
 #down img{
@@ -69,17 +128,14 @@ header{
 }
 
 #main{
-	background-color: black;
+	background-color: #6F8DC6;
 	display: block;
 	width: 100%;
 	float: left;
 }
 
-#leftcol li {
-	margin: 20% 0;
-}
-
 main ul {
+	width: -moz-fit-content;
 	width: fit-content;
 	margin: auto;
 	padding-left: 0;
@@ -90,22 +146,9 @@ main li {
 	margin: 10% 0;
 }
 
-/*#hidden{
-	display: none;
-	background-color: black;
-	width: 100%;
-	cursor: pointer;
+#main a {
+	color: #fff;
 }
-*/
-
-
-/*#hidden li{
-	color: gray;
-	text-align: center;
-	text-orientation: none;
-	width: 100%;
-	line-height: 45px;
-}*/
 
 #hidden{
 	background-color: white;
@@ -127,6 +170,7 @@ main li {
 
 #hidden img{
 	display: inline-block;
+	float: right;
 }
 .drop-content {
 	display: block;
@@ -135,6 +179,7 @@ main li {
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
+    left: 40%;
 }
 
 .drop-content a {
@@ -147,16 +192,19 @@ main li {
     text-decoration: none;
 }
 #dropbutton {
+	float: right;
 	cursor: pointer;
 	height: 10%;
 	width: 10%;
 }
+
 .dropdown {
     float: left;
     overflow: hidden;
 }
 
-.hidden .dropbutton {
+
+.hidden{
     cursor: pointer;
     font-size: 16px;    
     border: none;
@@ -188,6 +236,7 @@ main li {
 .show{
 	display: block;
 }
+
 header ul{
 	list-style-type: none;
 	font-size: 1.5em;
@@ -209,11 +258,11 @@ header li{
 	text-decoration: none;
 	height: 100%;
 	line-height: 45px;
+	color: #c0c3c6;
 }
 
 #main li a:hover{
-	background-color: white;
-	color: gray;
+	color: white;
 }
 
 #services {
@@ -242,6 +291,11 @@ header li{
 #pharmacists div{
 	float: left;
 	width: 50%
+}
+
+#pharmacists p{
+	display: inline-block;
+	width: 100%;
 }
 
 #hidden {
@@ -286,8 +340,25 @@ hr{
 	border-width: 5px;
 }
 
+#left img{
+	float: right;
+	margin-right: 10%
+}
+
+#right img{
+	float: left;
+	margin-left: 10%;
+}
 #right, #left{
 	margin-top: 1em;
+}
+
+#left p{
+	margin-left: 18%;
+}
+
+#right p{
+	margin-left: -40%;
 }
 
 #about{
@@ -297,9 +368,8 @@ hr{
 }
 
 #map {
-	display: inline-block;
-	float: left;
-	width: 50%;
+	width: 70%;
+	margin: auto;
 	text-align: center;
 }
 
@@ -308,7 +378,6 @@ hr{
 	width:100%;
 	display: block;
 	float: left;
-	padding-left: 10%;
 }
 .gmap_canvas{
 	text-align: center;
@@ -325,10 +394,37 @@ hr{
 	width: 50%;
 }
 
+a{
+	text-decoration: none;
+	color: #c0c3c6;
+}
+
+a:hover{
+	color: white;
+}
+
+#pharmacy_details{
+	width: 100%;
+	background-color: #6F8DC6;
+	margin-top: 1%;
+}
+
+p{
+	color: #f2f3f4;
+}
+
 footer{
 	float: left;
 	text-align: center;
 	width: 100%;
+}
+
+footer p{
+	color: #8c979a;
+}
+
+#small_contact{
+	display: none;
 }
 
 @media only screen and (max-width: 850px) {
@@ -356,13 +452,37 @@ footer{
 		font-size: 85%;
 		text-align: center;
 	}
+	#map {
+		width: 100%;
+	}
+	#brand{
+		display: block;
+		width: 100%;
+	}
+
+	#brand img{
+		width: 90%;
+		margin-top: 2%;
+		margin-bottom: 2%;
+		margin-left: 5%;
+	}
+
+	#contact{
+		display: none;
+	}
+	#small_contact{
+		display: block;
+	}
 }
 
 @media only screen and (max-width: 450px){
 	#banner{
 		font-size: 5vw;
 	}
-	#banner img{
+	#carousel{
+		height: 9.3em;
+	}
+	#down img{
 		width: 13.5%;
 		height: 13.5%;
 	}
@@ -382,22 +502,27 @@ footer{
 		display: block;
 	}
 	
+	#services h3{
+		margin-left: 2%;
+		margin-right: 2%;
+	}
 	#pharmacists img{
 		width: 40%;
 		height: 40%;
 	}
 
-	#brand{
-		display: block;
-		width: 50%;
+	#left img{
+		float: none;
+		margin: 0;
 	}
 
-	#brand img{
-		width: 30%;
-		height: 30%;
+	#right img{
+		float: none;
+		margin: 0;
 	}
-	#contact{
-		display: none;
+
+	#left p, #right p{
+		margin: 0;
 	}
 
 	#map{
@@ -410,5 +535,13 @@ footer{
 
 	.mapouter{
 		padding-left: 0;
+	}
+	#brand{
+		display: block;
+		width: 80%;
+	}
+
+	#brand_img{
+		margin-left: 5%;
 	}
 }

@@ -1,49 +1,82 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta name="viewport" content="width=device-width,initial-scale=1.0">
 		<title>Charmar Pharmacy</title>
 		<meta name="description" content="Charmar Pharmacy, Pehlam Parkway's neighborhood friendly drugstore."></meta>
+
+		<!-- Twitter Card data -->
+		<meta name="twitter:card" content="summary">
+		<meta name="twitter:title" content="Charmar Pharmacy">
+		<meta name="twitter:description" content="Charmar Pharmacy, Pehlam Parkway's neighborhood friendly drugstore.">
+		<meta name="twitter:image" content="http://www.example.com/image.jpg">
+
+		<!-- Open Graph data -->
+		<meta property="og:title" content="Charmar Pharmacy" />
+		<meta property="og:type" content="article" />
+		<meta property="og:url" content="http://www.example.com/" />
+		<meta property="og:image" content="http://example.com/image.jpg" />
+		<meta property="og:description" content="Charmar Pharmacy, Pehlam Parkway's neighborhood friendly drugstore." />
+
 		<link rel="stylesheet" type="text/css" href="static/css/main.css">
 		<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Roboto:400" rel="stylesheet">
 		<script src="static/js/jquery-3.3.1.min.js"></script>
-		<script type="text/javascript" src="static/js/main.js"> </script>
 	</head>
 	<body>
 		<header>
 			<div id="top">
 				<div id="logo">
 					<div id="brand">
-						<img id ="brand" src="media/img/logo.png">
+						<picture>
+							<source media="(max-width: 600px)" srcset="media/img/logo.png">
+							<source media="(max-width: 870px)" srcset="media/img/logo-med.png">
+							<img id ="brand_img" src="media/img/logo.png">
+						</picture>
 					</div>
 					<div id="contact">
-						<p>Reach us at 4848-2884-4884 </p>
-						<p>Located at 100 lydig ave, Bronx</p>
-						<p>We speak Spanish, Russian, and Albanian!</p>
+						<p><a href="tel:718-822-1348">(718)-822-1348</a></p>
+						<p>Located at 781 Lydig Ave Bronx, NY 10462</p>
+						<p>Hablamos español, мы говорим по-русски, ne flasim shqip!</p>
 					</div>
 					<nav id="hidden">
 					<img id =dropbutton src="media/img/dropdown.png">
 					<div class="drop-content" id="myDropDown">
-						<a href="#services"> Services </a>
-						<a href="#pharmacists"> Pharmacists </a>
-						<a href="#about"> About us </a>
+						<a onclick="scrollFunc('services')" href="#services" > Services </a>
+						<a onclick="scrollFunc('pharmacists')" href="#pharmacists"> Pharmacists </a>
+						<a onclick="scrollFunc('about')" href="#about"> About us </a>
 					</div>
 				</nav>
 				</div>
 				<nav id="main">
 					<ul>
-						<li><a href="#services">Services</a></li>
-						<li><a href="#pharmacists">Pharmacists</a></li>
-						<li><a href="#about">About us</a></li>
+						<li><a onclick="scrollFunc('services')" href="#services">Services</a></li>
+						<li><a onclick="scrollFunc('pharmacists')" href="#pharmacists">Pharmacists</a></li>
+						<li><a onclick="scrollFunc('about')" href="#about">About us</a></li>
 					</ul>
 				</nav>
 			</div>
 			<div id="banner">
-				<p> Your neighborhood's friendly drugstore </p>
-				<p> Discover Us </p>
-				<div id="down">
-					<img id="downimg" src="media/img/down_arrow.png">
+				<div id="carousel">
+					<div><img class="banner_img" src="media/img/p1.jpg"></div>
+					<div><img class="banner_img" src="media/img/p2.jpg"></div>
+					<div><img class="banner_img" src="media/img/p3.jpg"></div>
+					<div><img class="banner_img" src="media/img/p4.jpg"></div>
+					<div><img class="banner_img" src="media/img/p5.jpg"></div>
+					<div><img class="banner_img" src="media/img/p6.jpg"></div>
+					<div><img class="banner_img" src="media/img/p7.jpg"></div>
+					<div><img class="banner_img" src="media/img/p8.jpg"></div>
+					<div><img class="banner_img" src="media/img/p9.jpg"></div>
+					<div><img class="banner_img" src="media/img/p10.jpg"></div>
+					<div><img class="banner_img" src="media/img/p11.jpg"></div>
+				</div>
+				<div id="banner_text">
+					<p> Your neighborhood's friendly drugstore </p>
+					<p> Discover Us </p>
+					<div id="down">
+						<img id="downimg" src="media/img/down_arrow.png">
+					</div>
 				</div>
 			</div>
 		</header>
@@ -56,7 +89,7 @@
 					<img src="media/img/dollar.png">
 					<div class="container">
 						<ul>
-							<li>Fax Service</li>
+							<li>Fax Service&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
 							<li>Notary Public</li>
 							<li>5&#162; Copies</li>
 							<li>Money Orders</li>
@@ -99,7 +132,7 @@
 				</div>
 				<div id = "right">
 					<img src="media/img/stock2.jpg">
-					<p> John Smith </p>
+					<p> John Doe </p>
 				</div>
 			</div>
 			<div id="about">
@@ -108,17 +141,26 @@
 				<div id="map">
 					<div class="mapouter">
 						<div class="gmap_canvas">
-							<iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=charmar%20pharmacy&t=&z=17&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+							<iframe width="100%" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=charmar%20pharmacy&t=&z=17&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
 						</div>
 					</div>
 				</div>
 				<div id="pharmacy_details">
-					<h3> Details</h3>
-					<p> lefjjjfjfjjfjfjfjfjfffff</p>
-					<p> hfuiu49uifiunfnfffff</p>
+					<p>M-F 9:30AM - 6:30PM</p>
+					<p>Saturday 10AM - 4PM</p>
+					<p>Sunday CLOSED</p>
+					<div id="small_contact">
+						<p><a href="tel:718-822-1348">(718)-822-1348</a></p>
+						<p><a href="mailto:charmarinc@yahoo.com">charmarinc@yahoo.com</a></p>
+						<p>Hablamos español, мы говорим по-русски, ne flasim shqip!</p>
+					</div>
+					<p></p>
 				</div>
 			</div>
 		</main>
 		<footer><p>&copy; Rubaiyat Rashid 2018</p></footer>
 	</body>
+
+	<script type="text/javascript" src="static/js/siema.js"></script>
+	<script type="text/javascript" src="static/js/main.js"></script>
 </html>
